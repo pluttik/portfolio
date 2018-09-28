@@ -1,0 +1,7 @@
+*.pyc
+portfolio/__pycache__/
+/__pycache__/
+myvenv/
+db.sqlite3
+portfolio/secret_key.txt
+.idea/

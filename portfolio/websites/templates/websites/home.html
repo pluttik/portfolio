@@ -1,0 +1,27 @@
+<!--This page shows an instance of a business website, the template lives in templates/websites/-->
+
+{% extends 'websites/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'websites/home.css' %}">
+
+<div class="grid-container">
+
+    {% for service in business.service_set.all %}
+    <div class="grid-item">
+        <center>
+        <div class="grid-item icon_circle" style="background-color: {{ business.business_colour }};">
+            <p><b>{{ service.service_name|slice:"0:1" }}</b></p>
+        </div>
+        <!--img src="{% static service.service_icon %}"/-->
+            <p><b>{{ service.service_name }}</b></p>
+        <p>{{ service.service_text }}</p>
+        </center>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

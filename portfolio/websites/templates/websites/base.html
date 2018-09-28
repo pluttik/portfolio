@@ -1,0 +1,30 @@
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'websites/base_home.css' %}">
+
+<body>
+
+<div class="header" style="background-color: {{ business.business_colour }};">
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">&#x2630;</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="{% url 'websites:index' %}">home</a>
+            <a href="https://pcdl2.pythonanywhere.com">my other Django site</a>
+            <a href="https://pluttik.github.io">my CSS/Javascript site</a>
+        </div>
+    </div>
+</div>
+
+<div class="header header-business" style="background-image: url('{% static business.business_photo %}');">
+    <div class="centered-text">
+        <h1>{{ business.business_name }}</h1>
+    </div>
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+
+<script src="{% static 'websites/base_home.js' %}"></script>
